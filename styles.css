@@ -1237,12 +1237,14 @@ body {
   object-position: 70% center;
   opacity: 0.36;
   filter: saturate(0.65) contrast(1.08);
+  pointer-events: none;
 }
 
 .hero-scrim {
   position: absolute;
   inset: 0;
   z-index: -2;
+  pointer-events: none;
   background:
     linear-gradient(90deg, rgba(251, 251, 248, 0.98) 0%, rgba(251, 251, 248, 0.82) 48%, rgba(251, 251, 248, 0.34) 100%),
     linear-gradient(180deg, rgba(251, 251, 248, 0.22) 0%, rgba(251, 251, 248, 0.92) 100%);
@@ -1364,6 +1366,7 @@ body {
   height: 360px;
   z-index: 1;
   opacity: 0.96;
+  pointer-events: none;
 }
 
 .scene-box {
