@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://db.onlinewebfonts.com">
   <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
   <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
-  <link rel="stylesheet" href="./styles.css?v=20260701-2">
+  <link rel="stylesheet" href="./styles.css?v=20260702-1">
 </head>
 <body>
   <header class="site-header">
@@ -24,14 +24,19 @@
       <a href="#architecture">架构</a>
       <a href="#incentives">激励</a>
       <a href="#budget">预算</a>
+      <a href="#document">方案文档</a>
       <a href="#roadmap">路线图</a>
     </nav>
-    <a class="header-cta" href="#products">查看 SKU</a>
+    <a class="header-cta" href="#document">查看文档</a>
   </header>
 
   <main id="top">
     <section class="mainframe-hero" aria-label="投资人首屏展示">
-      <video class="hero-video" poster="./assets/ceo-box-reference.png" muted playsinline preload="none"></video>
+      <div class="hero-abstract-bg" aria-hidden="true">
+        <div class="hero-panel panel-main"></div>
+        <div class="hero-panel panel-side"></div>
+        <div class="hero-panel panel-base"></div>
+      </div>
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="blur-label">AI Box Company<br>Investor Product Interface</p>
@@ -42,6 +47,7 @@
           <a href="#architecture">硬件与软件架构</a>
           <a href="#incentives">激励和股权方案</a>
           <a href="#budget">启动预算测算</a>
+          <a href="#document">查看方案文档</a>
         </div>
         <div class="hero-stats" aria-label="核心指标">
           <span><strong>4</strong>条产品线</span>
@@ -50,10 +56,19 @@
           <span><strong>300万</strong>标准启动预算</span>
         </div>
       </div>
-      <div class="hero-device-scene" aria-hidden="true">
-        <div class="scene-box scene-box-screen"></div>
-        <div class="scene-box scene-box-gateway"></div>
-        <div class="scene-box scene-box-tower"></div>
+    </section>
+
+    <section class="section document-section" id="document">
+      <div class="section-heading split">
+        <div>
+          <span class="section-kicker">Source Document</span>
+          <h2>方案文档全文</h2>
+          <p>投资人可以在这里直接查看完整 PDF；页面中的产品、价格、激励和预算模块均围绕这份方案做可视化拆解。</p>
+        </div>
+        <a class="document-open" href="./assets/ai-hardware-company-plan.pdf" target="_blank" rel="noopener">打开 PDF</a>
+      </div>
+      <div class="document-viewer">
+        <iframe src="./assets/ai-hardware-company-plan.pdf#toolbar=1" title="AI硬件公司产品线及激励方案 PDF"></iframe>
       </div>
     </section>
 
@@ -361,6 +376,6 @@
     <a href="#top">返回顶部</a>
   </footer>
 
-  <script src="./app.js?v=20260701-2"></script>
+  <script src="./app.js?v=20260702-1"></script>
 </body>
 </html>
