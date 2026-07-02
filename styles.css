@@ -1138,8 +1138,8 @@ h1 {
 
 /* Mainframe-inspired investor presentation layer */
 :root {
-  --font-heading: "HelveticaNowDisplay-Medium", "Helvetica Neue", "Microsoft YaHei", Arial, sans-serif;
-  --font-body: "HelveticaNowDisplayW01-Rg", "Helvetica Neue", "Microsoft YaHei", Arial, sans-serif;
+  --font-heading: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-body: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
 }
 
 body {
