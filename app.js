@@ -18,6 +18,7 @@ const products = [
     specs: ["8-10 英寸触摸屏", "麦克风阵列 + 扬声器", "低功耗主机", "本地加密缓存", "会议录音键", "远程运维"],
     features: ["会议转写、纪要和待办", "老板问数和资料库问答", "每日经营简报", "客户/项目情报摘要"],
     value: "客户购买的不是一台小电脑，而是一个每天可见、可问、可录、可提醒的经营工作台。",
+    image: "./assets/product-ceo-pro.webp",
     visual: "screen"
   },
   {
@@ -39,6 +40,7 @@ const products = [
     specs: ["Web 工作台", "企业微信入口", "PC 插件可选", "低功耗网关盒可选", "本地缓存", "权限与日志"],
     features: ["算薪异常检查", "招采文件拆解", "制度问答", "合同初审", "部门知识库"],
     value: "用低价格快速证明单点场景价值，再向部门版和私有版升级。",
+    image: "./assets/product-office-gateway.webp",
     visual: "gateway"
   },
   {
@@ -60,6 +62,7 @@ const products = [
     specs: ["前台触摸屏", "麦克风阵列", "扬声器", "项目知识库", "远程运维", "可选摄像头"],
     features: ["物业客服问答", "报修分类与派单建议", "收费催缴话术", "巡检记录", "项目经营看板"],
     value: "单项目跑通后，可复制到多项目运营盒，并通过物业协会做渠道放大。",
+    image: "./assets/product-property-box.webp",
     visual: "kiosk"
   },
   {
@@ -81,6 +84,7 @@ const products = [
     specs: ["网关盒或轻算力盒", "32-64GB 可选", "项目资料库", "OCR/文档解析", "本地脱敏", "权限审计"],
     features: ["招标文件拆解", "供应商比价", "合同风险清单", "投标资料整理", "项目资料归档"],
     value: "用招采降本、合同风险和资料效率支撑项目制价格，而不是卖文档问答。",
+    image: "./assets/product-construction-box.webp",
     visual: "workstation"
   },
   {
@@ -102,6 +106,7 @@ const products = [
     specs: ["Ryzen AI Max+ 395 或同级", "64-128GB 统一内存", "2TB SSD", "本地 RAG", "权限审计", "本地模型路由"],
     features: ["敏感会议本地加密", "本地经营资料库", "私有问数", "多角色权限", "审计日志"],
     value: "高价来自数据安全和本地闭环，不来自硬件溢价。",
+    image: "./assets/product-ceo-private.webp",
     visual: "tower"
   }
 ];
@@ -180,11 +185,18 @@ function productSvg(product, large = false) {
     </svg>`;
 }
 
+function productImage(product, large = false) {
+  if (!product.image) return productSvg(product, large);
+  const className = large ? "product-photo large" : "product-photo";
+  const loading = large ? "eager" : "lazy";
+  return `<img class="${className}" src="${product.image}" alt="${product.name} 产品渲染图" loading="${loading}">`;
+}
+
 function productCard(product) {
   return `
     <article class="product-card" data-filters="${product.filters.join(" ")}">
       <button type="button" data-product="${product.id}" aria-label="查看 ${product.name} 详情">
-        <div class="product-visual">${productSvg(product)}</div>
+        <div class="product-visual">${productImage(product)}</div>
         <div class="product-content">
           <span class="line-tag" style="background:${product.color}">${product.tag}</span>
           <h3>${product.name}</h3>
@@ -211,7 +223,7 @@ function openProduct(productId) {
   if (!product) return;
 
   modalBody.innerHTML = `
-    <div class="modal-visual">${productSvg(product, true)}</div>
+    <div class="modal-visual">${productImage(product, true)}</div>
     <div class="modal-detail">
       <span class="line-tag" style="background:${product.color}">${product.line}</span>
       <h2 id="modalTitle">${product.name}</h2>
