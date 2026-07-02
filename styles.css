@@ -1240,14 +1240,99 @@ body {
   pointer-events: none;
 }
 
+.hero-abstract-bg {
+  position: absolute;
+  inset: 88px 0 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, rgba(5, 7, 10, 0.035) 0 1px, transparent 1px 74px),
+    repeating-linear-gradient(0deg, rgba(5, 7, 10, 0.025) 0 1px, transparent 1px 74px),
+    #fbfbf8;
+}
+
+.hero-panel {
+  position: absolute;
+  border: 2px solid rgba(5, 7, 10, 0.16);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 28px 80px rgba(5, 7, 10, 0.08);
+}
+
+.panel-main {
+  right: max(110px, calc((100vw - 1180px) / 2 + 160px));
+  top: 18%;
+  width: min(380px, 28vw);
+  aspect-ratio: 1.18;
+  border-radius: 32px 32px 14px 14px;
+}
+
+.panel-main::before,
+.panel-main::after,
+.panel-side::before,
+.panel-base::before {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(5, 7, 10, 0.16);
+}
+
+.panel-main::before {
+  inset: 36px 42px 92px;
+  background: #edf5f3;
+}
+
+.panel-main::after {
+  left: 34%;
+  right: 34%;
+  bottom: -38px;
+  height: 38px;
+  background: #05070a;
+  border-radius: 0 0 8px 8px;
+}
+
+.panel-side {
+  right: max(28px, calc((100vw - 1180px) / 2));
+  bottom: 9%;
+  width: min(158px, 14vw);
+  height: min(250px, 24vw);
+  border-radius: 22px;
+}
+
+.panel-side::before {
+  left: 22px;
+  right: 22px;
+  top: 48px;
+  height: 110px;
+  background: repeating-linear-gradient(180deg, #05070a 0 7px, transparent 7px 18px);
+  opacity: 0.62;
+}
+
+.panel-base {
+  right: max(240px, calc((100vw - 1180px) / 2 + 330px));
+  bottom: 14%;
+  width: min(260px, 20vw);
+  height: 92px;
+  border-radius: 20px;
+}
+
+.panel-base::before {
+  left: 32px;
+  right: 32px;
+  top: 34px;
+  height: 28px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 8px solid #05070a;
+  border-bottom: 8px solid #05070a;
+}
+
 .hero-scrim {
   position: absolute;
   inset: 0;
   z-index: -2;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(251, 251, 248, 0.98) 0%, rgba(251, 251, 248, 0.82) 48%, rgba(251, 251, 248, 0.34) 100%),
-    linear-gradient(180deg, rgba(251, 251, 248, 0.22) 0%, rgba(251, 251, 248, 0.92) 100%);
+    linear-gradient(90deg, #fbfbf8 0%, rgba(251, 251, 248, 0.96) 54%, rgba(251, 251, 248, 0.72) 100%),
+    linear-gradient(180deg, rgba(251, 251, 248, 0.12) 0%, #fbfbf8 100%);
 }
 
 .hero-content {
@@ -1529,6 +1614,48 @@ body {
   border-color: #05070a;
 }
 
+.document-section {
+  background: #fff;
+}
+
+.document-open {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #05070a;
+  border-radius: 999px;
+  background: #05070a;
+  color: #fff;
+  padding: 0 20px;
+  font-weight: 800;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.document-open:hover,
+.document-open:focus-visible {
+  opacity: 0.78;
+  transform: translateY(-1px);
+}
+
+.document-viewer {
+  height: min(76vh, 860px);
+  min-height: 620px;
+  border: 1px solid rgba(5, 7, 10, 0.14);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4ef;
+  box-shadow: 0 18px 56px rgba(5, 7, 10, 0.1);
+}
+
+.document-viewer iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
 .primary-button,
 .header-cta {
   background: transparent;
@@ -1568,6 +1695,10 @@ main > section {
     font-size: 11px;
   }
 
+  .header-cta {
+    display: none;
+  }
+
   .mainframe-hero {
     min-height: 100svh;
     padding: 98px 20px 42px;
@@ -1581,7 +1712,27 @@ main > section {
   }
 
   .hero-scrim {
-    background: linear-gradient(180deg, rgba(251, 251, 248, 0.72) 0%, rgba(251, 251, 248, 0.98) 54%, #fbfbf8 100%);
+    background: linear-gradient(180deg, rgba(251, 251, 248, 0.9) 0%, #fbfbf8 58%, #fbfbf8 100%);
+  }
+
+  .hero-abstract-bg {
+    inset: 72px 0 0;
+    background:
+      repeating-linear-gradient(90deg, rgba(5, 7, 10, 0.026) 0 1px, transparent 1px 56px),
+      repeating-linear-gradient(0deg, rgba(5, 7, 10, 0.02) 0 1px, transparent 1px 56px),
+      #fbfbf8;
+  }
+
+  .panel-main {
+    right: -72px;
+    top: 18%;
+    width: 300px;
+    opacity: 0.34;
+  }
+
+  .panel-side,
+  .panel-base {
+    display: none;
   }
 
   .mainframe-hero h1 {
@@ -1642,5 +1793,14 @@ main > section {
 
   .section {
     padding: 56px 20px;
+  }
+
+  .document-open {
+    margin-top: 18px;
+  }
+
+  .document-viewer {
+    height: 540px;
+    min-height: 540px;
   }
 }
